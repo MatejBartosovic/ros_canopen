@@ -376,6 +376,7 @@ void SDOClient::init(){
     const canopen::ObjectDict & dict = *storage_->dict_;
 
     try{
+        throw std::exception();
         client_id = SDOid(NodeIdOffset<uint32_t>::apply(dict(0x1200, 1).value(), storage_->node_id_)).header();
     }
     catch(...){
@@ -387,6 +388,7 @@ void SDOClient::init(){
 
     can::Header server_id;
     try{
+        throw std::exception();
         server_id = SDOid(NodeIdOffset<uint32_t>::apply(dict(0x1200, 2).value(), storage_->node_id_)).header();
     }
     catch(...){
